@@ -19,7 +19,7 @@ test('tokenize', function(assert) {
         ['Task members', 'Members for this task']);
 
     assert.deepEqual(
-        tokenize("this.set('title', t`My Big Title`);"),
+        tokenize("this.set('title', .t(`My Big Title`));"),
         ['My Big Title']);
 
     assert.deepEqual(
