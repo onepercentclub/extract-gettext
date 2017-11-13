@@ -23,6 +23,18 @@ test('tokenize', function(assert) {
         ['My Big Title']);
 
     assert.deepEqual(
+        tokenize("this.set('title', .t(\n`My Big Title`\n));"),
+        ['My Big Title']);
+
+    assert.deepEqual(
+        tokenize("this.set('title', .t(`My Big Title`, {bla: 'bli'}));"),
+        ['My Big Title']);
+
+    assert.deepEqual(
+        tokenize("this.set('title', .t(\n`My Big Title`,\n {bla: 'bli'}\n));"),
+        ['My Big Title']);
+
+    assert.deepEqual(
         tokenize("if (this.get('controllers.myProject.reviewMode')) {"),
         []);
 
